@@ -1,8 +1,9 @@
 import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { join, resolve } from 'node:path';
 import { detectContext } from '../lib/context-detector.mjs';
 
-const root = resolve(new URL('../fixtures/', import.meta.url).pathname);
+const root = resolve(fileURLToPath(new URL('../fixtures/', import.meta.url)));
 const names = ['website', 'web-app', 'game', 'playable-web-game', 'content-site', 'design-system', 'desktop-shell', 'commerce-app'];
 const rows = [];
 for (const name of names) {

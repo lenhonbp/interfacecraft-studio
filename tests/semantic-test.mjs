@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
+import { fileURLToPath } from 'node:url';
 import { join, resolve } from 'node:path';
 import { validateContract } from '../lib/contract-validator.mjs';
 
-const root = resolve(new URL('..', import.meta.url).pathname);
+const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const dir = await mkdtemp(join(tmpdir(), 'interfacecraft-semantic-'));
 const files = {
   'experience-brief.md': '# Experience Brief\n\n## Objective\n`BRF-001` Improve settings.\n\n## Context\nweb-app\n\n## Constraints\nNone.\n\n## Acceptance Criteria\n`ACC-001` Settings save is observable.\n',
