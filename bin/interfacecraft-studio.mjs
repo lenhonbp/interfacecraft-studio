@@ -144,7 +144,8 @@ async function copySkill(destination, { force = false, dryRun = false } = {}) {
 
 async function validate() {
   const skillPath = join(packageRoot, 'SKILL.md');
-  const content = await readFile(skillPath, 'utf8');
+  const rawContent = await readFile(skillPath, 'utf8');
+  const content = rawContent.replace(/\r\n/g, '\n');
   if (!content.startsWith('---\n')) throw new Error('SKILL.md must start with YAML frontmatter.');
   const end = content.indexOf('\n---\n', 4);
   if (end < 0) throw new Error('SKILL.md frontmatter must close with --- on its own line.');
