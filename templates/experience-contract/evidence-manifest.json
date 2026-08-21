@@ -1,0 +1,29 @@
+{
+  "contractVersion": "0.2",
+  "project": "example-project",
+  "context": "web-app",
+  "items": [
+    {
+      "id": "primary-journey-default",
+      "type": "screenshot",
+      "path": "evidence/primary-journey-default.png",
+      "viewport": "1440x900",
+      "states": ["default"],
+      "input": "keyboard",
+      "criteria": ["Intent", "Journey", "Visual system"],
+      "status": "pending",
+      "notes": "Replace with a real project-relative evidence path."
+    },
+    {
+      "id": "error-recovery",
+      "type": "manual-traversal",
+      "path": "evidence/error-recovery.md",
+      "viewport": "768x1024",
+      "states": ["error", "recovery"],
+      "input": "keyboard",
+      "criteria": ["State coverage", "Interaction", "Accessibility"],
+      "status": "pending",
+      "notes": "Record the trigger, feedback, recovery action, and focus result."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "recordVersion": "1.0",
+  "generatedBy": {
+    "name": "interfacecraft-studio",
+    "version": "0.2.0"
+  },
+  "contractVersion": "0.2",
+  "context": "web-app",
+  "task": "[Describe the completed experience task]",
+  "status": "not-ready",
+  "completedAt": "[UTC ISO-8601 timestamp]",
+  "agentSurface": "unknown",
+  "validation": {
+    "contract": "not-run",
+    "evidence": "not-run",
+    "evidenceCount": 0,
+    "pendingEvidenceCount": 0,
+    "warnings": []
+  },
+  "humanApproval": {
+    "status": "not-requested",
+    "approver": "",
+    "notes": ""
+  },
+  "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+}

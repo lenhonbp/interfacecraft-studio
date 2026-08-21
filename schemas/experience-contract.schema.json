@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://interfacecraft.studio/schemas/experience-contract.schema.json",
+  "title": "InterfaceCraft Experience Contract Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "context"],
+  "properties": {
+    "contractVersion": {
+      "type": "string",
+      "const": "0.2"
+    },
+    "context": {
+      "type": "string",
+      "enum": ["web-experience", "web-app", "game-experience", "playable-web-game"]
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lastReviewed": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

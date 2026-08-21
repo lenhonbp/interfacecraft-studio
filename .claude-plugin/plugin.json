@@ -1,0 +1,16 @@
+{
+  "name": "interfacecraft-studio",
+  "description": "State-first, evidence-based experience engineering for games, websites, web apps, and playable web games.",
+  "version": "0.2.0",
+  "author": {
+    "name": "InterfaceCraft Studio"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "game-ui",
+    "web-design",
+    "design-system"
+  ]
+}

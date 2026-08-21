@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://interfacecraft.studio/schemas/completion-record.schema.json",
+  "title": "InterfaceCraft Completion Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["recordVersion", "generatedBy", "contractVersion", "context", "task", "status", "completedAt", "validation", "agentSurface", "humanApproval", "contentHash"],
+  "properties": {
+    "recordVersion": { "type": "string", "const": "1.0" },
+    "generatedBy": { "type": "object", "additionalProperties": false, "required": ["name", "version"], "properties": { "name": { "const": "interfacecraft-studio" }, "version": { "type": "string", "minLength": 1 } } },
+    "contractVersion": { "type": "string", "const": "0.2" },
+    "context": { "type": "string", "enum": ["web-experience", "web-app", "game-experience", "playable-web-game", "unknown"] },
+    "task": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["ready", "ready-with-risks", "not-ready"] },
+    "completedAt": { "type": "string", "format": "date-time" },
+    "agentSurface": { "type": "string", "minLength": 1 },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "evidence", "evidenceCount"],
+      "properties": {
+        "contract": { "type": "string", "enum": ["passed", "passed-with-warnings", "failed", "not-run"] },
+        "evidence": { "type": "string", "enum": ["passed", "passed-with-pending", "failed", "not-run"] },
+        "evidenceCount": { "type": "integer", "minimum": 0 },
+        "pendingEvidenceCount": { "type": "integer", "minimum": 0 },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "humanApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "enum": ["not-requested", "pending", "approved", "rejected"] },
+        "approver": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "contentHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+  }
+}

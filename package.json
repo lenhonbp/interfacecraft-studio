@@ -1,0 +1,51 @@
+{
+  "name": "interfacecraft-studio",
+  "version": "0.2.0",
+  "description": "Professional UI/UX experience engineering skill for games, websites, web apps, and playable web games across modern coding agents.",
+  "type": "module",
+  "bin": {
+    "interfacecraft-studio": "bin/interfacecraft-studio.mjs"
+  },
+  "files": [
+    "SKILL.md",
+    "references",
+    "templates",
+    "schemas",
+    "agents",
+    ".claude-plugin",
+    "bin",
+    "demo",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "ui-ux",
+    "game-ui",
+    "web-design",
+    "experience-engineering",
+    "design-system",
+    "frontend"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenhonbp/interfacecraft-studio.git"
+  },
+  "homepage": "https://github.com/lenhonbp/interfacecraft-studio",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "validate": "node bin/interfacecraft-studio.mjs validate",
+    "test": "node tests/field-test.mjs",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm test && npm run validate && npm run pack:check",
+    "help": "node bin/interfacecraft-studio.mjs --help"
+  }
+}

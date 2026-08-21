@@ -1,0 +1,8 @@
+interface:
+  display_name: "InterfaceCraft Studio"
+  short_description: "State-first experience engineering for game and web interfaces"
+  brand_color: "#6D5EF5"
+  default_prompt: "Use InterfaceCraft Studio to create or update an Experience Contract, select the correct context adapter, cover all critical states, define implementation-ready behavior, and finish with observable evidence."
+
+policy:
+  allow_implicit_invocation: true
