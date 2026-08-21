@@ -17,8 +17,8 @@ const files = {
   'platform-rules.md': '# Platform Rules\n\n## Platform Matrix\n`SCR-001` supports desktop.\n\n## Accessibility\n`ACC-001` is keyboard accessible.\n',
   'component-contract.md': '# Component Contract\n\n## Component Inventory\n`CMP-001` owns `SCR-001`, `ST-001`, and `ACC-001`.\n\n## Acceptance\n`ACC-001` is testable.\n',
   'acceptance-checklist.md': '# Acceptance Checklist\n\n## Acceptance Matrix\n`ACC-001` is proven by `EVD-001`.\n\n## Release Decision\nready\n',
-  'evidence-manifest.json': JSON.stringify({ contractVersion: '0.3', project: 'semantic-fixture', context: 'web-app', items: [{ id: 'EVD-001', path: 'evidence/settings.md', screen: 'SCR-001', states: ['ST-001'], criteria: ['ACC-001'], status: 'ready' }] }, null, 2),
-  'contract.meta.json': JSON.stringify({ contractVersion: '0.3', context: 'web-app', traceability: { enabled: true } }, null, 2),
+  'evidence-manifest.json': JSON.stringify({ contractVersion: '0.3', project: 'semantic-fixture', context: 'web-app', items: [{ id: 'EVD-001', type: 'screenshot', path: 'evidence/settings.md', screen: 'SCR-001', states: ['ST-001'], criteria: ['ACC-001'], status: 'ready' }] }, null, 2),
+  'contract.meta.json': JSON.stringify({ contractVersion: '0.3', context: 'web-app', traceability: { enabled: true, idFormat: 'PREFIX-###' } }, null, 2),
 };
 try {
   await mkdir(join(dir, 'evidence'), { recursive: true });

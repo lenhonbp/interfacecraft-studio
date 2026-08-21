@@ -2,6 +2,27 @@
 
 All notable changes to InterfaceCraft Studio are documented here.
 
+## [0.3.1] — Schema and validation hardening
+
+### Added
+
+- Synchronized shipped Experience Contract, completion-record, traceability, and evidence-manifest schemas with the v0.3 runtime.
+- Added `schemas/evidence-manifest.schema.json` with typed evidence items and status enum: `pending`, `ready`, `failed`, `skipped`, and `not-applicable`.
+- Added Ajv-backed runtime schema validation and generated scaffold/completion-record conformance tests.
+- Added adversarial tests for escaped evidence paths, invalid evidence statuses and IDs, broken references, and missing CLI option values.
+
+### Changed
+
+- Evidence paths are canonicalized with `resolve()` and rejected when absolute or outside the allowed project root.
+- Evidence criteria and state references are validated completely rather than accepting a single matching ID.
+- Traceability graphs now contain typed nodes and relation-bearing edges derived from `schemas/artifact-rules.json`.
+- `--min-score` now gates `detect-context`; option values and enum options are validated before command execution.
+- `COMPLETION.md` now renders human approval notes; completion verification checks both SHA-256 integrity and the shipped schema.
+
+### Release status
+
+Version 0.3.1 is prepared for CI and tag validation. npm publication remains a separate action requiring explicit confirmation.
+
 ## [0.3.0] — Development release
 
 ### Added

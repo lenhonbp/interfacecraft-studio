@@ -3,9 +3,35 @@
   "$id": "https://github.com/lenhonbp/interfacecraft-studio/schemas/traceability.schema.json",
   "title": "InterfaceCraft Traceability Graph",
   "type": "object",
+  "additionalProperties": false,
   "required": ["nodes", "edges"],
   "properties": {
-    "nodes": { "type": "array", "items": { "type": "object", "required": ["id", "type", "artifact"], "properties": { "id": { "type": "string", "pattern": "^(BRF|JNY|SCR|ST|CMP|ACC|EVD)-[0-9]{3,}$" }, "type": { "enum": ["brief", "journey", "screen", "state", "component", "acceptance", "evidence"] }, "artifact": { "type": "string" } } } },
-    "edges": { "type": "array", "items": { "type": "object", "required": ["from", "to", "relation"], "properties": { "from": { "type": "string" }, "to": { "type": "string" }, "relation": { "type": "string" } } } }
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "artifact"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^(BRF|JNY|SCR|ST|CMP|ACC|EVD)-[0-9]{3,}$" },
+          "type": { "enum": ["BRF", "JNY", "SCR", "ST", "CMP", "ACC", "EVD"] },
+          "artifact": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to", "relation", "artifact"],
+        "properties": {
+          "from": { "type": "string", "pattern": "^(BRF|JNY|SCR|ST|CMP|ACC|EVD)-[0-9]{3,}$" },
+          "to": { "type": "string", "pattern": "^(BRF|JNY|SCR|ST|CMP|ACC|EVD)-[0-9]{3,}$" },
+          "relation": { "enum": ["proven-by", "captured-by", "contains-state", "owns-state", "navigates-to"] },
+          "artifact": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
   }
 }

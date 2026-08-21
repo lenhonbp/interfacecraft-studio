@@ -1,14 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://interfacecraft.studio/schemas/completion-record.schema.json",
+  "$id": "https://github.com/lenhonbp/interfacecraft-studio/schemas/completion-record.schema.json",
   "title": "InterfaceCraft Completion Record",
   "type": "object",
   "additionalProperties": false,
   "required": ["recordVersion", "generatedBy", "contractVersion", "context", "task", "status", "completedAt", "validation", "agentSurface", "humanApproval", "contentHash"],
   "properties": {
-    "recordVersion": { "type": "string", "const": "1.0" },
+    "recordVersion": { "type": "string", "const": "1.1" },
     "generatedBy": { "type": "object", "additionalProperties": false, "required": ["name", "version"], "properties": { "name": { "const": "interfacecraft-studio" }, "version": { "type": "string", "minLength": 1 } } },
-    "contractVersion": { "type": "string", "const": "0.2" },
+    "contractVersion": { "type": "string", "const": "0.3" },
     "context": { "type": "string", "enum": ["web-experience", "web-app", "game-experience", "playable-web-game", "unknown"] },
     "task": { "type": "string", "minLength": 1 },
     "status": { "type": "string", "enum": ["ready", "ready-with-risks", "not-ready"] },
@@ -17,19 +17,22 @@
     "validation": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["contract", "evidence", "evidenceCount"],
+      "required": ["mode", "contract", "evidence", "evidenceCount", "pendingEvidenceCount", "errors", "warnings", "traceability"],
       "properties": {
+        "mode": { "enum": ["structural", "semantic"] },
         "contract": { "type": "string", "enum": ["passed", "passed-with-warnings", "failed", "not-run"] },
         "evidence": { "type": "string", "enum": ["passed", "passed-with-pending", "failed", "not-run"] },
         "evidenceCount": { "type": "integer", "minimum": 0 },
         "pendingEvidenceCount": { "type": "integer", "minimum": 0 },
-        "warnings": { "type": "array", "items": { "type": "string" } }
+        "errors": { "type": "array", "items": { "type": "string" } },
+        "warnings": { "type": "array", "items": { "type": "string" } },
+        "traceability": { "type": "object", "additionalProperties": false, "required": ["nodes", "edges"], "properties": { "nodes": { "type": "integer", "minimum": 0 }, "edges": { "type": "integer", "minimum": 0 } } }
       }
     },
     "humanApproval": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["status"],
+      "required": ["status", "notes"],
       "properties": {
         "status": { "type": "string", "enum": ["not-requested", "pending", "approved", "rejected"] },
         "approver": { "type": "string" },

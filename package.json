@@ -1,6 +1,6 @@
 {
   "name": "interfacecraft-studio",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Professional UI/UX experience engineering skill for games, websites, web apps, and playable web games across modern coding agents.",
   "type": "module",
   "bin": {
@@ -44,12 +44,17 @@
   },
   "scripts": {
     "validate": "node bin/interfacecraft-studio.mjs validate",
-    "test": "npm run test:field && npm run test:semantic && npm run test:fixtures",
+    "test": "npm run test:field && npm run test:semantic && npm run test:fixtures && npm run test:schemas && npm run test:adversarial",
     "test:field": "node tests/field-test.mjs",
     "test:semantic": "node tests/semantic-test.mjs",
     "test:fixtures": "node tests/fixture-eval.mjs",
+    "test:schemas": "node tests/schema-conformance-test.mjs",
+    "test:adversarial": "node tests/adversarial-test.mjs",
     "pack:check": "npm pack --dry-run",
     "prepublishOnly": "npm test && npm run validate && npm run pack:check",
     "help": "node bin/interfacecraft-studio.mjs --help"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0"
   }
 }

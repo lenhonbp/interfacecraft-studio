@@ -1,30 +1,43 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://interfacecraft.studio/schemas/experience-contract.schema.json",
+  "$id": "https://github.com/lenhonbp/interfacecraft-studio/schemas/experience-contract.schema.json",
   "title": "InterfaceCraft Experience Contract Metadata",
   "type": "object",
   "additionalProperties": false,
   "required": ["contractVersion", "context"],
   "properties": {
-    "contractVersion": {
-      "type": "string",
-      "const": "0.2"
-    },
-    "context": {
-      "type": "string",
-      "enum": ["web-experience", "web-app", "game-experience", "playable-web-game"]
-    },
+    "contractVersion": { "type": "string", "enum": ["0.2", "0.3"] },
+    "context": { "type": "string", "enum": ["web-experience", "web-app", "game-experience", "playable-web-game"] },
     "project": {
-      "type": "string",
-      "minLength": 1
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string" },
+            "platform": { "type": "string" },
+            "owner": { "type": "string" }
+          }
+        }
+      ]
     },
-    "owner": {
-      "type": "string",
-      "minLength": 1
-    },
-    "lastReviewed": {
-      "type": "string",
-      "format": "date"
+    "owner": { "type": "string", "minLength": 1 },
+    "lastReviewed": { "type": "string", "format": "date" },
+    "traceability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "idFormat"],
+      "properties": {
+        "enabled": { "const": true },
+        "idFormat": { "const": "PREFIX-###" }
+      }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "contractVersion": { "const": "0.3" } } },
+      "then": { "required": ["traceability"] }
+    }
+  ]
 }

@@ -40,9 +40,14 @@ async function main() {
     return installSkill({ packageRoot, options });
   }
   if (command === 'scaffold') return scaffold({ packageRoot, options });
-  if (command === 'detect-context') return console.log(JSON.stringify(await detectContext(resolve(options.projectDir)), null, 2));
+  if (command === 'detect-context') {
+    const result = await detectContext(resolve(options.projectDir), { minScore: options.minScore });
+    console.log(JSON.stringify(result, null, 2));
+    if (!result.meetsMinScore) throw new Error(`Best context score ${result.scores[0].score} is below --min-score ${options.minScore}.`);
+    return;
+  }
   if (command === 'validate-contract') return console.log(JSON.stringify(await validateContract({ dir: options.dir, strict: options.strict, semantic: options.semantic || options.strict }), null, 2));
-  if (command === 'check-evidence') return console.log(JSON.stringify(await checkEvidence({ dir: options.dir, strict: options.strict }), null, 2));
+  if (command === 'check-evidence') return console.log(JSON.stringify(await checkEvidence({ dir: options.dir, projectRoot: options.projectDir, strict: options.strict }), null, 2));
   if (command === 'record-completion') return recordCompletion({ packageRoot, options });
   if (command === 'verify-completion') return verifyCompletion(options.projectDir, options.strict);
   throw new Error(`Unknown command '${command}'.`);
