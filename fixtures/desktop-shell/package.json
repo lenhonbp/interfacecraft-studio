@@ -1,0 +1,7 @@
+{
+  "name": "desktop-shell-fixture",
+  "dependencies": {
+    "electron": "^32.0.0",
+    "react": "^19.0.0"
+  }
+}

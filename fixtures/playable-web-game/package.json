@@ -1,0 +1,6 @@
+{
+  "name": "playable-web-game-fixture",
+  "dependencies": {
+    "phaser": "^3.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "content-site-fixture",
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

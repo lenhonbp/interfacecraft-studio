@@ -1,6 +1,6 @@
 {
   "name": "interfacecraft-studio",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Professional UI/UX experience engineering skill for games, websites, web apps, and playable web games across modern coding agents.",
   "type": "module",
   "bin": {
@@ -14,6 +14,7 @@
     "agents",
     ".claude-plugin",
     "bin",
+    "lib",
     "demo",
     "README.md",
     "LICENSE"
@@ -43,7 +44,10 @@
   },
   "scripts": {
     "validate": "node bin/interfacecraft-studio.mjs validate",
-    "test": "node tests/field-test.mjs",
+    "test": "npm run test:field && npm run test:semantic && npm run test:fixtures",
+    "test:field": "node tests/field-test.mjs",
+    "test:semantic": "node tests/semantic-test.mjs",
+    "test:fixtures": "node tests/fixture-eval.mjs",
     "pack:check": "npm pack --dry-run",
     "prepublishOnly": "npm test && npm run validate && npm run pack:check",
     "help": "node bin/interfacecraft-studio.mjs --help"

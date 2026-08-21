@@ -1,4 +1,4 @@
-# Visual Direction — [Project or Feature]
+# Visual Direction
 
 ## Experience intent
 
@@ -8,29 +8,22 @@
 
 ## Hierarchy
 
-- Primary information:
-- Secondary information:
-- Primary action:
-- Supporting action:
-- Attention or alert treatment:
-
-## Tokens
-
-| Token family | Semantic role | Value / rule | Example usage |
-|---|---|---|---|
-| Color | | | |
-| Typography | | | |
-| Spacing | | | |
-| Radius / shape | | | |
-| Elevation / depth | | | |
-| Motion | | | |
-
-## Component variants
-
-| Component | Default | Emphasis | Disabled | Error / warning | Context-specific variant |
+| Screen ID | Primary message | Primary action | Secondary action | Attention order | Acceptance ID |
 |---|---|---|---|---|---|
-| | | | | | |
+| `SCR-001` |  |  |  |  | `ACC-001` |
 
-## Asset and content rules
+## Visual System
 
-Document icon style, imagery, illustration, 3D assets, copy length, localization behavior, and fallbacks. Do not use decorative assets where they compete with critical information.
+| Component ID | Role | Typography | Color semantics | Spacing/density | Asset rule | State variation |
+|---|---|---|---|---|---|---|
+| `CMP-001` |  |  |  |  |  | `ST-001`, `ST-004` |
+
+## Design Tokens
+
+Record semantic tokens rather than isolated visual values. Include contrast intent, responsive behavior, and reduced-motion behavior.
+
+## Visual Evidence
+
+| Evidence ID | Screen ID | Component IDs | Viewport/platform | Acceptance IDs |
+|---|---|---|---|---|
+| `EVD-001` | `SCR-001` | `CMP-001` |  | `ACC-001` |

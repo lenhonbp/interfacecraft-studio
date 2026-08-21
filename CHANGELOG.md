@@ -2,6 +2,22 @@
 
 All notable changes to InterfaceCraft Studio are documented here.
 
+## [0.3.0] — Development release
+
+### Added
+
+- Modular CLI runtime split into argument parsing, installer, context detector, contract validator, evidence validator, scaffolder, skill validator, filesystem utilities, and provenance modules.
+- Semantic contract validation backed by `schemas/artifact-rules.json`, including required sections, stable artifact IDs, evidence references, and cross-artifact traceability graph output.
+- Traceability IDs connecting `BRF`, `JNY`, `SCR`, `ST`, `CMP`, `ACC`, and `EVD` artifacts.
+- Context detector scoring with ranked results, confidence, score margin, signal evidence, and human-review flag.
+- Eight real-world mini-project fixtures and evaluation harness with 8/8 expected context classifications.
+- Semantic validator test and fixture regression test integrated into `npm test` and the package release gate.
+
+### Fixed
+
+- Installer now copies files and directories correctly across platforms after the CLI modularization.
+- CLI package-root resolution uses `fileURLToPath` for Windows-safe URL handling.
+
 ## [0.2.0] — Release candidate
 
 ### Added

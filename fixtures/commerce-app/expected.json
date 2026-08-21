@@ -1,0 +1,4 @@
+{
+  "fixture": "commerce-app",
+  "expectedContext": "web-app"
+}

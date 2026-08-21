@@ -21,7 +21,7 @@ async function exists(path) {
 async function detect(project, expected) {
   const { stdout } = await run(['detect-context', '--project-dir', project], root);
   const result = JSON.parse(stdout);
-  assert.equal(result.context, expected, `${project} should detect ${expected}`);
+  assert.equal(result.recommendedContext, expected, `${project} should detect ${expected}`);
 }
 
 const work = await mkdtemp(join(tmpdir(), 'interfacecraft-field-'));
@@ -47,7 +47,7 @@ try {
   const validation = await run(['validate-contract', '--dir', contract], root);
   assert.match(validation.stdout, /"valid": true/);
   const evidence = await run(['check-evidence', '--dir', contract], root);
-  assert.match(evidence.stdout, /"pending": 2/);
+  assert.match(evidence.stdout, /"pending": 1/);
 
   await run(['record-completion', '--project-dir', webApp, '--dir', contract, '--task', 'Field test web app', '--agent-surface', 'manual', '--approval', 'pending'], root);
   const verified = await run(['verify-completion', '--project-dir', webApp, '--strict'], root);

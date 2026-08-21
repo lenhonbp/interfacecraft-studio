@@ -1,0 +1,7 @@
+{
+  "name": "design-system-fixture",
+  "dependencies": {
+    "react": "^19.0.0",
+    "storybook": "^8.0.0"
+  }
+}

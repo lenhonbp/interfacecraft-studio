@@ -1,36 +1,30 @@
-# Component Contract — [Component Name]
+# Component Contract
 
-## Responsibility
+## Component Inventory
 
-- User/player problem solved:
-- Owned state:
-- Inputs and outputs:
-- Out of scope:
-
-## API and variants
-
-| Property / slot | Type or content rule | Required? | Default | Notes |
-|---|---|---:|---|---|
-| | | | | |
-
-## State behavior
-
-| State | Rendering | Interaction | Feedback | Accessibility semantics |
+| Component ID | Screen IDs | Responsibility | Owned state IDs | Primary acceptance IDs |
 |---|---|---|---|---|
-| | | | | |
+| `CMP-001` | `SCR-001` |  | `ST-001`, `ST-004` | `ACC-001` |
 
-## Layout behavior
+## API and Variants
 
-Describe intrinsic sizing, container constraints, responsive reflow, overflow, localization, safe area, and composition with adjacent components.
+| Component ID | Input/API | Output/event | Variant | Content rules | Platform differences |
+|---|---|---|---|---|---|
+| `CMP-001` |  |  |  |  |  |
 
-## Implementation notes
+## State Behavior
 
-Specify framework or engine conventions, semantic tokens, event ownership, data-loading boundary, performance constraints, and test seams. Do not introduce arbitrary one-off values that are not part of the design system.
+| Component ID | State ID | Visual behavior | Interaction behavior | Recovery behavior | Evidence ID |
+|---|---|---|---|---|---|
+| `CMP-001` | `ST-001` |  |  |  | `EVD-001` |
+| `CMP-001` | `ST-004` |  |  |  | `EVD-001` |
 
-## Acceptance criteria
+## Acceptance
 
-- The component supports every required state.
-- The primary action is reachable with every relevant input method.
-- Content remains readable under long text, scaling, and localization.
-- Focus, feedback, error, and recovery behavior are observable.
-- Variants use documented tokens and do not fork the design language.
+| Acceptance ID | Observable implementation condition | Test/evidence path |
+|---|---|---|
+| `ACC-001` |  | `EVD-001` |
+
+## Implementation Notes
+
+Document component boundaries, ownership, tokens, test hooks, accessibility semantics, and any intentionally deferred behavior.

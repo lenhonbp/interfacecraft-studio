@@ -1,47 +1,30 @@
-# Experience Brief — [Project or Feature]
+# Experience Brief
+
+## Objective
+
+- `BRF-001` User/player problem to solve:
+- `BRF-002` Desired outcome:
+- `BRF-003` Business or product outcome:
 
 ## Context
 
-- Product or game:
 - Primary context: `web-experience` / `web-app` / `game-experience` / `playable-web-game`
-- Current stage: discovery / redesign / implementation / review
-- Platform, engine, framework:
-
-## Audience and situation
-
-- Primary user/player:
-- Situation of use:
-- Relevant skill, familiarity, or accessibility context:
-
-## Goal and success
-
-- Primary user/player goal:
-- Product/game objective:
-- Observable success signal:
-- Non-goals:
+- `BRF-004` Audience/persona:
+- `BRF-005` Primary platform and input model:
+- `BRF-006` Existing project constraints:
 
 ## Constraints
 
-- Viewport, resolution, safe-zone, or gameplay-distance constraints:
-- Input methods:
-- Content and localization constraints:
-- Performance and asset constraints:
-- Existing design system or technical conventions:
-
-## Assumptions
-
-| Assumption | Confidence | Impact if wrong | Owner / decision date |
+| Constraint ID | Constraint | Why it matters | Verification |
 |---|---|---|---|
-| | | | |
+| `BRF-010` |  |  |  |
 
-## Acceptance criteria
+## Acceptance Criteria
 
-1. 
-2. 
-3. 
-
-## Open questions
-
-| Question | Why it matters | Owner | Status |
+| Acceptance ID | Criterion | Observable result | Evidence ID |
 |---|---|---|---|
-| | | | |
+| `ACC-001` |  |  | `EVD-001` |
+
+## Out of Scope
+
+- `BRF-020` Deliberately excluded capability:

@@ -1,29 +1,20 @@
 {
-  "contractVersion": "0.2",
-  "project": "example-project",
+  "contractVersion": "0.3",
+  "project": "",
   "context": "web-app",
   "items": [
     {
-      "id": "primary-journey-default",
+      "id": "EVD-001",
       "type": "screenshot",
-      "path": "evidence/primary-journey-default.png",
+      "path": "evidence/settings-default.png",
       "viewport": "1440x900",
-      "states": ["default"],
-      "input": "keyboard",
-      "criteria": ["Intent", "Journey", "Visual system"],
+      "screen": "SCR-001",
+      "components": ["CMP-001"],
+      "states": ["ST-001", "ST-004"],
+      "criteria": ["ACC-001"],
+      "input": "keyboard + pointer",
       "status": "pending",
-      "notes": "Replace with a real project-relative evidence path."
-    },
-    {
-      "id": "error-recovery",
-      "type": "manual-traversal",
-      "path": "evidence/error-recovery.md",
-      "viewport": "768x1024",
-      "states": ["error", "recovery"],
-      "input": "keyboard",
-      "criteria": ["State coverage", "Interaction", "Accessibility"],
-      "status": "pending",
-      "notes": "Record the trigger, feedback, recovery action, and focus result."
+      "notes": ""
     }
   ]
 }

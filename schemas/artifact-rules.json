@@ -1,0 +1,22 @@
+{
+  "version": "0.3",
+  "idPattern": "^(BRF|JNY|SCR|ST|CMP|ACC|EVD)-[0-9]{3,}$",
+  "artifacts": {
+    "experience-brief.md": { "prefixes": ["BRF"], "sections": ["Objective", "Context", "Constraints", "Acceptance Criteria"] },
+    "journey.md": { "prefixes": ["JNY", "SCR", "ST", "ACC"], "sections": ["Primary Journey", "Recovery"] },
+    "screen-map.md": { "prefixes": ["SCR", "JNY", "ST", "CMP"], "sections": ["Screen Inventory", "Navigation"] },
+    "state-matrix.md": { "prefixes": ["ST", "SCR", "CMP"], "sections": ["State Coverage"] },
+    "interaction-contract.md": { "prefixes": ["CMP", "ST", "ACC"], "sections": ["Interaction Rules", "Recovery"] },
+    "visual-direction.md": { "prefixes": ["SCR", "CMP", "ACC"], "sections": ["Hierarchy", "Visual System"] },
+    "platform-rules.md": { "prefixes": ["SCR", "ACC"], "sections": ["Platform Matrix", "Accessibility"] },
+    "component-contract.md": { "prefixes": ["CMP", "SCR", "ST", "ACC"], "sections": ["Component Inventory", "Acceptance"] },
+    "acceptance-checklist.md": { "prefixes": ["ACC", "EVD"], "sections": ["Acceptance Matrix", "Release Decision"] }
+  },
+  "links": [
+    { "from": "ACC", "to": "EVD", "relation": "proven-by" },
+    { "from": "ST", "to": "EVD", "relation": "captured-by" },
+    { "from": "SCR", "to": "ST", "relation": "contains-state" },
+    { "from": "CMP", "to": "ST", "relation": "owns-state" },
+    { "from": "JNY", "to": "SCR", "relation": "navigates-to" }
+  ]
+}

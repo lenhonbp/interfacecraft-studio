@@ -1,8 +1,8 @@
 interface:
   display_name: "InterfaceCraft Studio"
-  short_description: "State-first experience engineering for game and web interfaces"
+  short_description: "Semantic, traceable experience engineering for game and web interfaces"
   brand_color: "#6D5EF5"
-  default_prompt: "Use InterfaceCraft Studio to create or update an Experience Contract, select the correct context adapter, cover all critical states, define implementation-ready behavior, and finish with observable evidence."
+  default_prompt: "Use InterfaceCraft Studio v0.3 to score the project context, create an Experience Contract with stable BRF/JNY/SCR/ST/CMP/ACC/EVD IDs, validate semantic sections and traceability, verify evidence, and record neutral completion provenance. Ask for human confirmation when detector confidence is low or the score margin is narrow."
 
 policy:
   allow_implicit_invocation: true

@@ -1,25 +1,20 @@
-# Journey — [Primary User or Player Goal]
+# Journey
 
-| Step | User/player intent | Surface | Action/input | System feedback | Decision or risk |
-|---:|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
+## Primary Journey
 
-## Entry condition
+| Journey ID | Step | Screen ID | State ID | User/player intent | System feedback | Acceptance ID |
+|---|---:|---|---|---|---|---|
+| `JNY-001` | 1 | `SCR-001` | `ST-001` |  |  | `ACC-001` |
+| `JNY-001` | 2 | `SCR-002` | `ST-002` |  |  | `ACC-002` |
 
-Describe what brought the user/player here and what context must be preserved.
+## Decisions and Branches
 
-## Success condition
-
-Describe the observable result that means the goal is complete.
-
-## Failure and recovery paths
-
-| Failure or interruption | Detection | Message/feedback | Recovery action | Context preserved? |
+| Journey ID | Decision | Success path | Recovery path | State IDs |
 |---|---|---|---|---|
-| | | | | |
+| `JNY-001` |  |  |  | `ST-001`, `ST-003` |
 
-## Journey risks
+## Recovery
 
-Record ambiguity, excessive cognitive load, hidden actions, irreversible decisions, or context loss.
+| Journey ID | Failure/interruption | Visible feedback | Available action | Exit state | Evidence ID |
+|---|---|---|---|---|---|
+| `JNY-001` |  |  |  | `ST-004` | `EVD-001` |
